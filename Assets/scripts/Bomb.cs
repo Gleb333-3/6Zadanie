@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    [SerializeField]
-    private Transform _Object;
 
     [SerializeField]
-    private GameObject _WhatYdal;
+    private Transform _player;
 
     [SerializeField]
     private Transform _Bomb;
@@ -16,11 +14,12 @@ public class Bomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var distance = Vector3.Distance(_Object.position, _Bomb.position);
+        var distance = Vector3.Distance(_player.position, _Bomb.position);
         float a = 1.4f;
         if (distance < a) {
-
-            Destroy(_WhatYdal);
+           
+            
+            _player.position = new Vector3(12.4f, -3.2f, -44.4f);
         }
     }
 }
